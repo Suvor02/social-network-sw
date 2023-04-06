@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./profile.module.css"
 
 export const Profile = () => {
     return <div className="content">
