@@ -1,13 +1,13 @@
 .app {
-  display: grid;
-  width: 100%;
-  grid-template-areas:
+    display: grid;
+    width: 90%;
+    grid-template-areas:
 "header header "
 "nav content ";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-
-
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 

@@ -1,0 +1,46 @@
+.nav {
+    grid-area: nav;
+    background-color: #3636c9;
+}
+
+.button{
+    /* геометрия элемента */
+    width: 100%;
+    /*height: 20px;*/
+    /*!* отступы между кнопками *!*/
+    /*margin-bottom: 5px;*/
+    /*!* центрируем текст кнопки по вертикали *!*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*!* центрируем текст кнопки по горизонтали *!*/
+    /*text-align: center;*/
+    /*!* чтобы работала геометрия и отступы у тега <a> *!*/
+    /*display: inline-block;*/
+    /*!* убираем обводку у тега <a> *!*/
+    /*text-decoration: none;*/
+    /*background-color: red;*/
+    /*color: #fff;*/
+    background: #008EB0; /* Синий цвет фона */
+    color: #fff; /* Белый цвет текста */
+    border: none; /* Убираем рамку */
+    padding: 0.2rem 1.5rem; /* Поля вокруг текста */
+    margin-bottom: 1rem; /* Отступ снизу */
+    border-radius: 20px;
+}
+
+.button:hover {
+
+    background: #2f44f3;
+    tansition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+}
+.button a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.button a:active{
+    color: #000000;
+}
