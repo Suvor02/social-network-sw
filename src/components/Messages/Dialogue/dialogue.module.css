@@ -3,10 +3,11 @@
     background-color: #80eeff;
 }
 
-.flex {
-    display: flex;
-
-
+.dialogue{
+    flex: 8 2;
+    background-color: #3636c9;
 }
+
+
 
 
