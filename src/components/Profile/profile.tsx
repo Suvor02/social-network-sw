@@ -1,10 +1,14 @@
 import React from "react";
 import stile from "./profile.module.css"
-import {Post} from "./My_posts/Post/Post";
 import {MyPost} from "./My_posts/MyPost";
+import {stateType} from "../redax/state";
 
-export const Profile = () => {
-    const messenger = "hello vvdhsgfsdhf dfdfdfedsf dsfsdfsdfsd fdfsdfds"
+type ProfilePropsType = {
+    state: stateType
+}
+
+
+export const Profile = (props: ProfilePropsType) => {
     return <div className={stile.content}>
         <div><img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmlhIU4A41bSn6ifGxAQVvIr9Zs1eb_69pQw&usqp=CAU"
@@ -22,9 +26,6 @@ export const Profile = () => {
                 <div>Unknown</div>
             </div>
         </div>
-        <MyPost />
-        <Post messenge={messenger}/>
-        <Post messenge={messenger}/>
-        <Post messenge={messenger}/>
+        <MyPost post={props.state.profilePage.post}/>
     </div>
 }

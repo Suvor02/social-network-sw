@@ -1,7 +1,17 @@
 import {v1} from "uuid";
 
-export type stateType = { messagesPage: messagesPageType }
-
+export type stateType = {
+    profilePage: profilePageType
+    messagesPage: messagesPageType
+}
+export type profilePageType = {
+    post: postType[]
+}
+export type postType = {
+    id: number
+    title: string
+    message: string
+}
 export type messagesPageType = {
     users: usersArray[]
     dialogue: dialogueArray[]
@@ -15,8 +25,24 @@ export type dialogueArray = {
     message: string
 }
 
-
-export const state :stateType = {
+const post = []
+export const state: stateType = {
+    profilePage: {
+        post: [
+            {id: 1, title: "Post1", message: "hello"},
+            {id: 2, title: "Post2", message: "Greetings, fellow colleagues "},
+            {id: 3, title: "Post3", message: "I would like to share my insights on this task"},
+            {
+                id: 4,
+                title: "Post4",
+                message: " I reckon we should deal with at least half of the points in the plan without further delays"
+            },
+            {
+                id: 5,
+                title: "Post5",
+                message: "I suggest proceeding from one point to the next and notifying the rest of us with at least short notices"
+            }]
+    },
     messagesPage: {
         users: [
             {_id: v1(), name: "Sasha"},

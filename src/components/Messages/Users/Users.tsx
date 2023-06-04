@@ -14,9 +14,9 @@ export const Users: React.FC<usersTypeProps> = (props) => {
 
             {props.users.map((u) => {
                 return (
-                    <div key={u._id} className={s.users}>
+                    <div key={u._id} className={s.u}>
                         <NavLink to={"/Messages/" + u._id}>
-                            <div>{u.name} </div>
+                            <div className={s.u}>{u.name} </div>
                         </NavLink>
 
                     </div>

@@ -3,11 +3,15 @@
     background-color: #80eeff;
 }
 
-
 .users {
-    flex: 2 8;
-    background-color: #007957;
-    text-decoration: none;
-    color: #fff;
+    padding: 6px;
+    flex: 0 1 30%;
+    align-self: stretch;
+    background-color: #ebedf0;
+    text-align: center;
+    line-height: 30px;
 }
 
+.u {
+    color: #000000;
+}

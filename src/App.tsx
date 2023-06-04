@@ -27,7 +27,8 @@ function App(props: AppPropsType) {
                 {/*<Route path={"/Settings"} component={Setting}/>  */}
                 <Route path={"/Messages"} render={() => <Messages
                     state={props.state}/>}/>
-                <Route path={"/Profile"} render={() => <Profile/>}/>
+                <Route path={"/Profile"} render={() => <Profile
+                    state={props.state}/>}/>
                 <Route path={"/Music"} render={() => <Music/>}/>
                 <Route path={"/News"} render={() => <News/>}/>
                 <Route path={"/Settings"} render={() => <Setting/>}/>

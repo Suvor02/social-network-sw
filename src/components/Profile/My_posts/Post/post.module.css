@@ -1,6 +1,32 @@
-.post{
+.post {
+    display: grid;
+    grid-template-columns: 6% 54% 40%;
+    grid-template-rows: 80% 25px;
+    grid-template-areas:
+    "ssd sddsd sddsd"
+    "dsdsdsds dsdsdsds dsdsdsds";
 
+
+    margin: 3px 7px 8px;
 }
-.post img{
-    width: 100%;
+
+.post img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.div1 {
+    grid-area: ssd;
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+.div2 {
+    grid-area: sddsd;
+    background-color: #bebebe;
+}
+
+.div3 {
+    grid-area: dsdsdsds;
+    background-color: #8c8c8c;
 }

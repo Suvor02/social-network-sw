@@ -4,16 +4,16 @@ import {Dialogue} from "./Dialogue/Dialogue";
 import {stateType} from "../redax/state";
 
 type MessagesPropsType = {
-    state:stateType
+    state: stateType
 }
-export const Messages = (props:MessagesPropsType) => {
+export const Messages = (props: MessagesPropsType) => {
 
     return <div className={s.content}>
         <div className={s.flex}>
-            <div className={s.users}><Users
-                users={props.state.messagesPage.users}/></div>
-            <div className={s.dialogue}><Dialogue
-                dialogue={props.state.messagesPage.dialogue}/></div>
+            <Users
+                users={props.state.messagesPage.users}/>
+            <Dialogue
+                dialogue={props.state.messagesPage.dialogue}/>
         </div>
     </div>
 }

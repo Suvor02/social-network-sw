@@ -1,18 +1,42 @@
-import React from "react";
+import React, {useState} from "react";
 import stile from "./post.module.css"
+import {postType} from "../../../redax/state";
+
 type PostProps = {
-    messenge:string
+    key: number
+    title: string
+    message: string
 }
 export const Post: React.FC<PostProps> = (props) => {
-    console.log(props.messenge)
-    return <>
-        <div className={stile.post}>
+    let [like, setLike] = useState(0)
+    const increaseLike = () => {
+        setLike(like + 1)
+    }
+    const decreaseLike = () => {
+        setLike(like - 1)
+    }
 
-            <img src="https://oir.mobi/uploads/posts/2022-08/1661283100_5-oir-mobi-p-vityaz-art-krasivo-6.jpg" alt=""/>
-            <h2>Post</h2>
-            <input type="text"/>
-            <h4>{props.messenge}</h4>
-            <button>like</button>
+    return (
+        <div className={stile.post} key={props.key}>
+                        <div className={stile.div1}>
+                            <img
+                                src="https://kartinkin.net/uploads/posts/2022-02/1644893136_4-kartinkin-net-p-pikselnie-kartinki-4.png"
+                                alt=""/>
+                        </div>
+                        <div className={stile.div2}>
+                            <h2>{props.title}</h2>
+                            <h4>{props.message}</h4>
+                        </div>
+                        <div className={stile.div3}>
+                            <button
+                                onClick={increaseLike}>
+                                like
+                            </button>
+                            {like}
+                            <button
+                                onClick={decreaseLike}>dislike
+                            </button>
+                        </div>
         </div>
-    </>
+    )
 }
