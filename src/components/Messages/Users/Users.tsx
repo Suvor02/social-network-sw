@@ -1,7 +1,8 @@
-import {usersArray} from "../Messages";
 import React from "react";
 import {NavLink} from "react-router-dom";
 import s from "./users.module.css"
+import {usersArray} from "../../redax/state";
+
 
 type usersTypeProps = {
     users: usersArray[]

@@ -1,7 +1,9 @@
-import {dialogueArray, usersArray} from "../Messages";
+
 import React from "react";
 
 import s from "./dialogue.module.css"
+import {dialogueArray} from "../../redax/state";
+
 
 type dialogueTypeProps = {
     dialogue:dialogueArray[]
