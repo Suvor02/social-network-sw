@@ -1,13 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import {state} from "./components/redax/state";
+import { state} from "./components/redax/state";
+import {renderEntireTree} from "./render";
 
+renderEntireTree(state)
 
-ReactDOM.render(
-    < App
-        state={state}
-    />,
-    document.getElementById('root')
-);

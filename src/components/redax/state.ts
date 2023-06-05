@@ -1,4 +1,5 @@
 import {v1} from "uuid";
+import {renderEntireTree} from "../../render";
 
 export type stateType = {
     profilePage: profilePageType
@@ -25,7 +26,6 @@ export type dialogueArray = {
     message: string
 }
 
-const post = []
 export const state: stateType = {
     profilePage: {
         post: [
@@ -59,4 +59,11 @@ export const state: stateType = {
             {id: v1(), message: "What are you doing?"}
         ]
     }
+}
+
+
+export const addPost = (postMessage:string) =>{
+const newPost = {id:6,  title: "Post1", message:postMessage }
+    state.profilePage.post.push(newPost)
+    renderEntireTree(state)
 }

@@ -12,6 +12,7 @@ import {stateType} from "./components/redax/state";
 
 type AppPropsType = {
     state:stateType
+    addPost:(postMessage:string)=>void
 }
 
 function App(props: AppPropsType) {
@@ -28,7 +29,7 @@ function App(props: AppPropsType) {
                 <Route path={"/Messages"} render={() => <Messages
                     state={props.state}/>}/>
                 <Route path={"/Profile"} render={() => <Profile
-                    state={props.state}/>}/>
+                    state={props.state}  addPost={props.addPost}/>}/>
                 <Route path={"/Music"} render={() => <Music/>}/>
                 <Route path={"/News"} render={() => <News/>}/>
                 <Route path={"/Settings"} render={() => <Setting/>}/>

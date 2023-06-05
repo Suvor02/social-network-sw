@@ -5,6 +5,7 @@ import {stateType} from "../redax/state";
 
 type ProfilePropsType = {
     state: stateType
+    addPost:(postMessage:string)=>void
 }
 
 
@@ -26,6 +27,6 @@ export const Profile = (props: ProfilePropsType) => {
                 <div>Unknown</div>
             </div>
         </div>
-        <MyPost post={props.state.profilePage.post}/>
+        <MyPost post={props.state.profilePage.post} addPost={props.addPost}/>
     </div>
 }
