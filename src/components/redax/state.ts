@@ -7,6 +7,7 @@ export type stateType = {
 }
 export type profilePageType = {
     post: postType[]
+    newPostText: string
 }
 export type postType = {
     id: number
@@ -41,7 +42,8 @@ export const state: stateType = {
                 id: 5,
                 title: "Post5",
                 message: "I suggest proceeding from one point to the next and notifying the rest of us with at least short notices"
-            }]
+            }],
+        newPostText: "sadasd"
     },
     messagesPage: {
         users: [
@@ -62,8 +64,14 @@ export const state: stateType = {
 }
 
 
-export const addPost = (postMessage:string) =>{
-const newPost = {id:6,  title: "Post1", message:postMessage }
+export const addPost = () => {
+    const newPost = {id: 6, title: "Post1", message: state.profilePage.newPostText}
     state.profilePage.post.push(newPost)
+    state.profilePage.newPostText = ""
     renderEntireTree(state)
+}
+export const updateNewPostText = (newText:string) => {
+    state.profilePage.newPostText = newText
+    renderEntireTree(state)
+
 }

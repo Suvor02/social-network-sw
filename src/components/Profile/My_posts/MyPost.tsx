@@ -7,6 +7,8 @@ import {postType} from "../../redax/state";
 type MyPostPropsType = {
     post: postType[]
     addPost: (postMessage: string) => void
+    newPostText:string
+    updateNewPostText:(newText:string)=>void
 }
 
 export const MyPost = (props: MyPostPropsType) => {
@@ -14,7 +16,7 @@ export const MyPost = (props: MyPostPropsType) => {
 
     const elementsPost =
         props.post.map((p) => <Post key={p.id} title={p.title} message={p.message}/>)
-    //          createRef.current?.value                             useRef
+
     let newElementPost = React.createRef<HTMLTextAreaElement>()
 
     const addPostClick = () => {
@@ -25,11 +27,19 @@ export const MyPost = (props: MyPostPropsType) => {
 
     }
 
+    const onChangeNewElement = () => {
+       let text = newElementPost.current?.value
+        if (typeof text === "string") {
+            props.updateNewPostText(text)
+        }
+    }
 
     return <div className={stile.posts}>
         <h2>My post</h2>
         <div>
-            <textarea ref={newElementPost}/>
+            <textarea ref={newElementPost}
+                      value={props.newPostText}
+                      onChange={onChangeNewElement}/>
         </div>
         <div>
             <button
