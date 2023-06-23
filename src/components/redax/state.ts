@@ -12,6 +12,7 @@ export type StoreType = {
 export type stateType = {
     profilePage: profilePageType
     messagesPage: messagesPageType
+    sidebarPage:any
 }
 export type profilePageType = {
     post: postType[]
@@ -76,7 +77,8 @@ const store:StoreType = {
                 {id: v1(), message: "What are you doing?"}
             ],
             newMessageBody:""
-        }
+        },
+        sidebarPage:{}
     },
     getState(){
         return this._state
