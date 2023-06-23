@@ -5,6 +5,7 @@ import {stateType} from "../redax/state";
 
 type MessagesPropsType = {
     state: stateType
+    dispatch(action:any):void
 }
 export const Messages = (props: MessagesPropsType) => {
 
@@ -13,7 +14,8 @@ export const Messages = (props: MessagesPropsType) => {
             <Users
                 users={props.state.messagesPage.users}/>
             <Dialogue
-                dialogue={props.state.messagesPage.dialogue}/>
+                dialogue={props.state.messagesPage}
+                dispatch={props.dispatch}/>
         </div>
     </div>
 }

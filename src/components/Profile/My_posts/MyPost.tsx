@@ -1,14 +1,15 @@
 import stile from "./myPost.module.css";
 import React from "react";
 import {Post} from "./Post/Post";
-import {postType} from "../../redax/state";
+import {addPostClickActionCreator, onChangeNewElementActionCreator, postType} from "../../redax/state";
 
 
 type MyPostPropsType = {
     post: postType[]
-    addPost: (postMessage: string) => void
-    newPostText:string
-    updateNewPostText:(newText:string)=>void
+    // addPost: (postMessage: string) => void
+    newPostText: string
+    // updateNewPostText:(newText:string)=>void
+    dispatch(action: any): void
 }
 
 export const MyPost = (props: MyPostPropsType) => {
@@ -22,15 +23,17 @@ export const MyPost = (props: MyPostPropsType) => {
     const addPostClick = () => {
         let text = newElementPost.current?.value
         if (typeof text === "string") {
-            props.addPost(text)
+            // props.addPost(text)
+            props.dispatch(addPostClickActionCreator())
         }
 
     }
 
     const onChangeNewElement = () => {
-       let text = newElementPost.current?.value
+        let text = newElementPost.current?.value
         if (typeof text === "string") {
-            props.updateNewPostText(text)
+            // props.updateNewPostText(text)
+            props.dispatch(onChangeNewElementActionCreator(text))
         }
     }
 

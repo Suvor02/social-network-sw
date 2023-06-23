@@ -8,12 +8,13 @@ import {BrowserRouter, Route} from "react-router-dom";
 import {Setting} from './components/Settings/Settings';
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
-import {stateType, updateNewPostText} from "./components/redax/state";
+import {stateType} from "./components/redax/state";
 
 type AppPropsType = {
     state:stateType
-    addPost:(postMessage:string)=>void
-    updateNewPostText:(newText:string)=>void
+    // addPost:(postMessage:string)=>void
+    // updateNewPostText:(newText:string)=>void
+    dispatch(action:any):void
 }
 
 function App(props: AppPropsType) {
@@ -28,12 +29,11 @@ function App(props: AppPropsType) {
                 {/*<Route path={"/News"} component={News}/>*/}
                 {/*<Route path={"/Settings"} component={Setting}/>  */}
                 <Route path={"/Messages"} render={() => <Messages
-                    state={props.state}/>}/>
+                    state={props.state}
+                    dispatch={props.dispatch}/>}/>
                 <Route path={"/Profile"} render={() => <Profile
                     state={props.state}
-                    addPost={props.addPost}
-                    updateNewPostText={props.updateNewPostText}/>}
-                />
+                    dispatch={props.dispatch}/>}/>
                 <Route path={"/Music"} render={() => <Music/>}/>
                 <Route path={"/News"} render={() => <News/>}/>
                 <Route path={"/Settings"} render={() => <Setting/>}/>
