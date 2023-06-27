@@ -1,7 +1,8 @@
 import React, {ChangeEvent} from "react";
 
 import s from "./dialogue.module.css"
-import {messagesPageType, onChangeNewMessageBodyCreator, sendMessageCreator} from "../../redax/state";
+import {messagesPageType} from "../../redax/state";
+import {onChangeNewMessageBodyCreator, sendMessageCreator} from "../../redax/messages-reducer";
 
 type dialogueTypeProps = {
     dialogue: messagesPageType

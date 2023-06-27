@@ -1,7 +1,8 @@
 import stile from "./myPost.module.css";
 import React from "react";
 import {Post} from "./Post/Post";
-import {addPostClickActionCreator, onChangeNewElementActionCreator, postType} from "../../redax/state";
+import { postType} from "../../redax/state";
+import {addPostClickActionCreator, onChangeNewElementActionCreator} from "../../redax/profile-reducer";
 
 
 type MyPostPropsType = {

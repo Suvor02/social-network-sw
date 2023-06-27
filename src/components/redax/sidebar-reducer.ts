@@ -1,7 +1,12 @@
+const sidebarReducer = (state: any, action: any) => {
 
-
-export const sidebarReducer = (state: any, action: any) => {
-
-
-    return state
+    switch (action.type) {
+        case "": {
+            return state
+        }
+        default:
+            return state
+    }
 }
+
+export default sidebarReducer
