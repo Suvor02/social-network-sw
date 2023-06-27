@@ -3,7 +3,7 @@ import stile from "./profile.module.css"
 import {MyPostContainer} from "./My_posts/MyPostContainer";
 
 type ProfilePropsType = {
-    store:any
+    // store:any
 }
 
 
@@ -25,6 +25,6 @@ export const Profile = (props: ProfilePropsType) => {
                 <div>Unknown</div>
             </div>
         </div>
-        <MyPostContainer store={props.store}/>
+        <MyPostContainer />
     </div>
 }

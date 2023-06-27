@@ -10,18 +10,18 @@ import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 
 type AppPropsType = {
-    store: any
+    // store: any
 }
 
 function App(props: AppPropsType) {
+
     return (
         <BrowserRouter>
             <div className="app">
                 <Header/>
                 <NavBar/>
-                <Route path={"/Messages"} render={() => <Messages
-                    store={props.store}/>}/>
-                <Route path={"/Profile"} render={() => <Profile store={props.store}/>}/>
+                <Route path={"/Messages"} render={() => <Messages/>}/>
+                <Route path={"/Profile"} render={() => <Profile />}/>
                 <Route path={"/Music"} render={() => <Music/>}/>
                 <Route path={"/News"} render={() => <News/>}/>
                 <Route path={"/Settings"} render={() => <Setting/>}/>

@@ -1,24 +1,28 @@
 import React from "react";
 import {addPostClickActionCreator, onChangeNewElementActionCreator} from "../../redax/profile-reducer";
 import {MyPost} from "./MyPost";
+import StoreContext from "../../../StoreContext";
 
 
 type MyPostContainerPropsType = {
-    store: any
+    // store: any
 }
 
 export const MyPostContainer = (props: MyPostContainerPropsType) => {
-    let state = props.store.getState()
+    return <StoreContext.Consumer>
+        {(store:any)=>{
+    let state = store.getState()
     const addPostClick = () => {
-        props.store.dispatch(addPostClickActionCreator())
+        store.dispatch(addPostClickActionCreator())
 
     }
     const onChangeNewElement = (text: string) => {
-        props.store.dispatch(onChangeNewElementActionCreator(text))
+      store.dispatch(onChangeNewElementActionCreator(text))
     }
 
     return <MyPost onChange={onChangeNewElement}
                    addPost={addPostClick}
                    post={state.profilePage.post}
                    newPostText={state.profilePage.newPostText}/>
+    }}</StoreContext.Consumer>
 }
