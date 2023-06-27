@@ -1,21 +1,19 @@
 import s from "./messeges.module.css"
 import {Users} from "./Users/Users";
-import {Dialogue} from "./Dialogue/Dialogue";
-import {stateType} from "../redax/state";
+import {DialogueContainer} from "./Dialogue/DialogueContainer";
+
 
 type MessagesPropsType = {
-    state: stateType
-    dispatch(action:any):void
+    store:any
 }
 export const Messages = (props: MessagesPropsType) => {
+    let state = props.store.getState()
 
     return <div className={s.content}>
         <div className={s.flex}>
             <Users
-                users={props.state.messagesPage.users}/>
-            <Dialogue
-                dialogue={props.state.messagesPage}
-                dispatch={props.dispatch}/>
+                users={state.messagesPage.users}/>
+           <DialogueContainer store={props.store}/>
         </div>
     </div>
 }

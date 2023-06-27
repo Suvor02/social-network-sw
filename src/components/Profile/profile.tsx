@@ -1,13 +1,9 @@
 import React from "react";
 import stile from "./profile.module.css"
-import {MyPost} from "./My_posts/MyPost";
-import {stateType} from "../redax/state";
+import {MyPostContainer} from "./My_posts/MyPostContainer";
 
 type ProfilePropsType = {
-    state: stateType
-    // addPost:(postMessage:string)=>void
-    // updateNewPostText:(newText:string)=>void
-    dispatch(action:any):void
+    store:any
 }
 
 
@@ -29,10 +25,6 @@ export const Profile = (props: ProfilePropsType) => {
                 <div>Unknown</div>
             </div>
         </div>
-        <MyPost post={props.state.profilePage.post}
-                dispatch={props.dispatch}
-                newPostText={props.state.profilePage.newPostText}
-                // updateNewPostText={props.dispatch}
-        />
+        <MyPostContainer store={props.store}/>
     </div>
 }

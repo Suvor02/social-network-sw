@@ -4,21 +4,17 @@ import './index.css';
 import App from './App';
 import store from "./components/redax/redux-store";
 
-export const rerenderEntireTree = (state:any)=>{
+export const rerenderEntireTree = (state: any) => {
 
     ReactDOM.render(
-        < App
-            state={state}
-            dispatch={store.dispatch.bind(store)}
-        />,
+        < App store={store}/>,
         document.getElementById('root')
     );
 }
 
-
 rerenderEntireTree(store.getState())
 
-store.subscribe(()=>{
+store.subscribe(() => {
     const state = store.getState()
     rerenderEntireTree(state)
 })

@@ -1,33 +1,32 @@
 import React, {ChangeEvent} from "react";
-
 import s from "./dialogue.module.css"
 import {messagesPageType} from "../../redax/state";
-import {onChangeNewMessageBodyCreator, sendMessageCreator} from "../../redax/messages-reducer";
 
 type dialogueTypeProps = {
-    dialogue: messagesPageType
-    dispatch(action: any): void
+    messagesPage: messagesPageType
+    onChangeNewMessageBody: (body: string) => void
+    dialogOnClick:()=>void
 }
 
 // const newElementDialog = React.createRef<HTMLTextAreaElement>()
 
 export const Dialogue: React.FC<dialogueTypeProps> = (props) => {
 
-    const newMessageBody = props.dialogue.newMessageBody
+    const newMessageBody = props.messagesPage.newMessageBody
 
     const dialogOnClick = () => {
-        props.dispatch(sendMessageCreator())
+        props.dialogOnClick()
     }
     const onNewMessageChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
         const body = event.target.value
         if (typeof body === "string")
-            props.dispatch(onChangeNewMessageBodyCreator(body))
+           props.onChangeNewMessageBody(body)
     }
     return (
         <div className={s.dialogue}>
             <div className={s.header}>
             </div>
-            <div className={s.body}> {props.dialogue.dialogue.map((d) => {
+            <div className={s.body}> {props.messagesPage.dialogue.map((d) => {
                 return <div key={d.id}>{d.message}</div>
             })}
             </div>
