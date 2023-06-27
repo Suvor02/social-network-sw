@@ -3,7 +3,25 @@ import {v1} from "uuid";
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY"
 const SEND_MESSAGE = "SEND_MESSAGE"
 
-const messagesReducer = (state: any, action: any) => {
+const initialState = {
+    users: [
+        {_id: v1(), name: "Sasha"},
+        {_id: v1(), name: "Ivan"},
+        {_id: v1(), name: "Sergey"},
+        {_id: v1(), name: "Anna"},
+        {_id: v1(), name: "Valera"},
+        {_id: v1(), name: "Zhenya"}
+    ],
+        dialogue: [
+        {id: v1(), message: "hello"},
+        {id: v1(), message: "I'm"},
+        {id: v1(), message: "how are you ?"},
+        {id: v1(), message: "What are you doing?"}
+    ],
+        newMessageBody: ""
+}
+
+const messagesReducer = (state: any=initialState, action: TsarType) => {
 
     switch (action.type) {
         case SEND_MESSAGE : {
