@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import store from "./components/redax/state";
-import {Provider} from "./StoreContext";
+import {Provider} from "react-redux";
+
 
 export const rerenderEntireTree = (state: any) => {
     // (нужно изменить типизацию в store с люой на профильную)

@@ -3,7 +3,22 @@ import {v1} from "uuid";
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY"
 const SEND_MESSAGE = "SEND_MESSAGE"
 
-const initialState = {
+export type messagesPageType = {
+    users: usersArray[]
+    dialogue: dialogueArray[]
+    newMessageBody: string
+}
+export type usersArray = {
+    _id: string
+    name: string
+}
+export type dialogueArray = {
+    id: string
+    message: string
+}
+
+
+const initialState:messagesPageType = {
     users: [
         {_id: v1(), name: "Sasha"},
         {_id: v1(), name: "Ivan"},
@@ -21,7 +36,7 @@ const initialState = {
         newMessageBody: ""
 }
 
-const messagesReducer = (state: any=initialState, action: TsarType) => {
+const messagesReducer = (state: messagesPageType=initialState, action: TsarType):messagesPageType => {
 
     switch (action.type) {
         case SEND_MESSAGE : {

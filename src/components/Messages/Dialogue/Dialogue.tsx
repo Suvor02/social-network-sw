@@ -4,8 +4,12 @@ import {messagesPageType} from "../../redax/state";
 
 type dialogueTypeProps = {
     messagesPage: messagesPageType
-    onChangeNewMessageBody: (body: string) => void
-    dialogOnClick:()=>void
+    onChangeNewMessageBody: () => void
+    dialogOnClick: (body: string) => void
+
+    // messagesPage: any
+    // onChangeNewMessageBody: (body: string) => void
+    // dialogOnClick:()=>void
 }
 
 // const newElementDialog = React.createRef<HTMLTextAreaElement>()

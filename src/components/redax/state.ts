@@ -26,16 +26,16 @@ export type postType = {
     title: string
     message: string
 }
-export type messagesPageType = {
+ type messagesPageType = {
     users: usersArray[]
     dialogue: dialogueArray[]
     newMessageBody: string
 }
-export type usersArray = {
+ type usersArray = {
     _id: string
     name: string
 }
-export type dialogueArray = {
+ type dialogueArray = {
     id: string
     message: string
 }
@@ -45,7 +45,7 @@ const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY"
 const SEND_MESSAGE = "SEND_MESSAGE"
 // StoreType
-const store: StoreType = {
+const store: any = {
     _state: {
         profilePage: {
             post: [
